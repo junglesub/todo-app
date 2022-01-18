@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -13,5 +13,5 @@ jobs:
         run: npm install
       - name: Predeploy
         run: npm run predeploy
-       - name: Deploy
+      - name: Deploy
         run: npm run deploy
