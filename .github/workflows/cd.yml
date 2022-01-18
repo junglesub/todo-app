@@ -1,0 +1,17 @@
+name: CD
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install modules
+        run: npm install
+      - name: Predeploy
+        run: npm run predeploy
+       - name: Deploy
+        run: npm run deploy
